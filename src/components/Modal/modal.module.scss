@@ -1,0 +1,111 @@
+@import "../../Scss/reset";
+@import "../../Scss/vars";
+@import "../../Scss/base";
+@import "../../Scss/fonts";
+
+.none {
+  display: none;
+}
+
+.modal {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.555);
+  z-index: 10;
+  position: fixed;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 150px;
+  gap: 15px;
+  border: 2px solid $modal-border;
+  border-radius: 20px;
+  width: 70%;
+  height: max-content;
+  padding: 20px;
+  background-color: #fff;
+  -webkit-animation-name: zoomIn;
+  animation-name: zoomIn;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  form {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    margin-bottom: 25px;
+  }
+  h1 {
+    @include headers-font;
+    font-size: 38px;
+    color: $headers-color;
+    margin-bottom: 25px;
+  }
+}
+
+.zoomIn {
+  -webkit-animation-name: zoomIn;
+  animation-name: zoomIn;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+@-webkit-keyframes zoomIn {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale3d(0.3, 0.3, 0.3);
+    transform: scale3d(0.3, 0.3, 0.3);
+  }
+  50% {
+    opacity: 1;
+  }
+}
+@keyframes zoomIn {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale3d(0.3, 0.3, 0.3);
+    transform: scale3d(0.3, 0.3, 0.3);
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+.close {
+  position: absolute;
+  right: 0;
+  margin-top: -125px;
+  margin-right: 5px;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  opacity: 0.5;
+  &:hover {
+    opacity: 1;
+  }
+  transition: 0.2s all ease-in;
+}
+.close::after,
+.close::before {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 25px;
+  height: 5px;
+  background: $btn-background;
+}
+
+.close::after {
+  transform: rotate(-45deg);
+}
+.close::before {
+  transform: rotate(45deg);
+}

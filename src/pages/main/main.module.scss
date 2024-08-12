@@ -1,0 +1,30 @@
+@import "../../Scss/reset";
+@import "../../Scss/vars";
+@import "../../Scss/base";
+@import "../../Scss/fonts";
+
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+}
+
+.todoHeader {
+  margin-top: 50px;
+  @include headers-font;
+  font-size: 42px;
+  color: $headers-color;
+}
+
+.todoContainer {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 70%;
+}
+
+
